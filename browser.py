@@ -21,21 +21,15 @@ async def playwright_scraper(url: str) -> str:
             # Launch a headless Chromium browser
             browser = await p.chromium.launch()
             page = await browser.new_page()
-            
-            # Navigate to the URL
-            await page.goto(url)
-            
-            # Get the page's entire text content
+            await page.goto(url)   $navigate to url
             content = await page.inner_text('body')
-            
             await browser.close()
-            
             return content
             
     except Exception as e:
         warnings.warn(f"An error occurred during Playwright scraping: {e}")
-        return f"⚠️ An error occurred: {str(e)}. Failed to scrape content from {url}."
+        return f"An error occurred: {str(e)}. Failed to scrape content from {url}."
 
 if __name__ == "__main__":
-    print("✅ Starting Playwright Scraper MCP server…")
+    print("Starting Playwright Scraper MCP server…")
     mcp.run("stdio")
