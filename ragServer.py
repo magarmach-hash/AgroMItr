@@ -17,13 +17,11 @@ for pdf_path in PDF_PATHS:
     print(f"Loaded {len(docs)} pages from {pdf_path}")
     all_docs.extend(docs)
 
-# print(f"Total pages loaded from all PDFs: {len(all_docs)}")
 splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 splits = splitter.split_documents(all_docs)
 print(f"Created {len(splits)} chunks from all PDFs")
 
-
-print("Generating embeddings...")
+#Generating embeddings
 embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
 vectorstore = FAISS.from_documents(splits, embeddings)
 retriever = vectorstore.as_retriever()
