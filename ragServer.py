@@ -4,7 +4,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import OllamaEmbeddings
 
-PDF_PATHS = ["document1.pdf", "insect.pdf", "fertmanual.pdf","fertmanual2.pdf","schemes.pdf","subsi.pdf"]  # List of PDFs
+PDF_PATHS = [" "," "]  # List of PDFs
 EMBEDDING_MODEL = "nomic-embed-text"
 
 mcp = FastMCP("rag-server")
