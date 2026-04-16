@@ -21,9 +21,6 @@ AgroMitr uses modular tool servers:
 | **Mandi Prices** | Real-time govt crop prices |
 | **RAG** | Search govt manuals, subsidies & PDFs |
 | **Translation** | Multi-language support |
-| **BS4 Scraper** | Static website scraping |
-| **Playwright Scraper** | Dynamic site automation |
-| **Client Controller** | Orchestrates all servers + GPT |
 
 ---
 
@@ -53,8 +50,7 @@ Flow:
 ## 🛠 Tech Stack
 - **Python**, **FastAPI**  
 - **Telegram Bot API**  
-- **MCP client-server architecture**  
-- **BeautifulSoup**, **Playwright**  
+- **MCP client-server architecture**   
 - **OpenAI GPT models**  
 - **Gov APIs**  
 - **Embeddings + RAG**  
@@ -70,8 +66,8 @@ agromitr/
 │   ├── mandi/  
 │   ├── rag/  
 │   ├── translation/  
-│   ├── bs4_scraper/  
-│   └── playwright_scraper/  
+│    
+│     
 │── telegram_bot/  
 │── docs/                         # Manuals + embeddings  
 │── README.md  
