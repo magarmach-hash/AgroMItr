@@ -22,5 +22,4 @@ def get_weather(location: str) -> str:
         return f"Error fetching weather: {e}"
 
 if __name__ == "__main__":
-    # Run the MCP server
     mcp.run(transport="streamable-http")

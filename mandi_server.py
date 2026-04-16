@@ -7,7 +7,7 @@ import warnings
 mcp = FastMCP("mandi-price-server")
 
 BASE_URL = "https://api.data.gov.in/resource/35985678-0d79-46b4-9ed6-6f13308a1d24"
-API_KEY = "579b464db66ec23bdd000001f39eb4f168814cff5dd4ef0431c669e1"
+API_KEY = ""
 
 @mcp.tool()
 def get_mandi_prices(state: str, district: str = None, commodity: str = None) -> str:
@@ -63,7 +63,7 @@ def get_mandi_prices(state: str, district: str = None, commodity: str = None) ->
                     )
 
         if results:
-            return "\n".join(results[:10])  #top 10 results
+            return "\n".join(results[:10])  
         else:
             return f"No prices found for {commodity or 'any commodity'} in {state}" + (f", {district}" if district else "")
 

@@ -16,7 +16,7 @@ agent = None  # global agent
 
 # Telegram Handlers 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Meow Meow Bitch")
+    await update.message.reply_text("Meow Meow")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global chat_history, agent

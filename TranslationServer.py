@@ -3,7 +3,6 @@ from deep_translator import GoogleTranslator
 
 mcp = FastMCP("translation-server")
 
-# Convert any input to English
 def to_english(text):
     try:
         return GoogleTranslator(source='auto', target='en').translate(text)
@@ -11,7 +10,6 @@ def to_english(text):
         print("Translation error:", e)
         return text
 
-# Convert English output back to target language
 def from_english(text, target_lang="hi"):
     try:
         return GoogleTranslator(source='en', target=target_lang).translate(text)
@@ -19,7 +17,6 @@ def from_english(text, target_lang="hi"):
         print("Translation error:", e)
         return text
 
-# MCP Tool: bidirectional translation
 @mcp.tool()
 def translate_bidirectional(user_input: str, user_lang: str = "auto") -> str:
     """
@@ -30,8 +27,8 @@ def translate_bidirectional(user_input: str, user_lang: str = "auto") -> str:
     # Step 1: to English
     english_input = to_english(user_input)
 
-    # Step 2: Generate response in English (stub)
-    model_output = f"[Model output for]: {english_input}"  # Replace with actual LLM call
+    # Step 2: Generate response in English 
+    model_output = f"[Model output for]: {english_input}"  
 
     # Step 3: Back to original language
     if user_lang == "auto":
